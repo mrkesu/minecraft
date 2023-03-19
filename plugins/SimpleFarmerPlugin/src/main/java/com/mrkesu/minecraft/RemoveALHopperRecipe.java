@@ -47,40 +47,8 @@ public class RemoveALHopperRecipe implements Listener {
             Hopper hopper = (Hopper) event.getSource().getHolder();
             if (hopper.getCustomName() != null && hopper.getCustomName().equals("Remove Acute Loot Hopper")) {
                 ItemStack item = event.getItem();
-                // Run command for each item passing through hopper
-                // Doesn't work. Maybe I can use their API?
-
-                Bukkit.getLogger().info("Trying to get AL info...");
-                //Bukkit.getLogger().info(ALIntegration.API.getLootItem(item));
-                Bukkit.getLogger().info("Trying on: " + item);
-
-                Bukkit.getLogger().info("Debug: " + KrakenSimpleFarmer.alIntegration.checkVersion());
-                
-
-                //KrakenSimpleFarmer.alIntegration.removeStuff(item)
-
-                //KrakenSimpleFarmer.alIntegration.getALInfo();
-
-                // I just re-implemented the RemoveCommand ¯\_(ツ)_/¯
-                // https://github.com/zizmax/AcuteLoot/blob/master/src/main/java/acute/loot/commands/RemoveCommand.java
-
-                // if (plugin().getLootCode(item) != null) {
-                //     ItemMeta meta = item.getItemMeta();
-                //     meta.setLore(new ArrayList<>());
-                //     meta.setDisplayName(null);
-                //     NamespacedKey key = new NamespacedKey(plugin(), "lootCodeKey");
-                //     meta.getPersistentDataContainer().remove(key);
-                //     item.setItemMeta(meta);
-                //     Bukkit.getLogger().info("AcuteLoot removed");
-                // } else {
-                //     Bukkit.getLogger().info("Item is not AcuteLoot");
-                // }
-
-                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "acuteloot remove " + item);
-                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "acuteloot remove " + item.getType().getKey().getKey());
-                
+                KrakenSimpleFarmer.alIntegration.removeStuff(item);
             }
         }
     }
-
 }
