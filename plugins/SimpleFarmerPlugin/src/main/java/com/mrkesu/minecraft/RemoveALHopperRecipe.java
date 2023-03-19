@@ -15,6 +15,9 @@ import org.bukkit.block.Hopper;
 import org.bukkit.event.inventory.InventoryMoveItemEvent;
 
 public class RemoveALHopperRecipe implements Listener {
+    
+    // AcuteLoot API testing
+    private ALIntegration alIntegration;
 
     public static void registerRecipe() {
         // Create custom hopper
@@ -44,11 +47,8 @@ public class RemoveALHopperRecipe implements Listener {
             Hopper hopper = (Hopper) event.getSource().getHolder();
             if (hopper.getCustomName() != null && hopper.getCustomName().equals("Remove Acute Loot Hopper")) {
                 ItemStack item = event.getItem();
-                // Run command for each item passing through hopper
-                // Doesn't work. Maybe I can use their API?
-                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "/acuteloot remove " + item.getType().getKey().getKey());
+                KrakenSimpleFarmer.alIntegration.removeStuff(item);
             }
         }
     }
-
 }
