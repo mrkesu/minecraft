@@ -1,0 +1,69 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.mrkesu.minecraft</groupId>
+    <artifactId>KrakenSimpleFarmer</artifactId>
+    <version>1.0.2</version>
+    <name>Kraken Simple Farmer Plugin</name>
+    <description>Just a simple farmer plugin</description>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <mainClass>com.mrkesu.minecraft.KrakenSimpleFarmer</mainClass>
+        <author>mrkesu</author>
+
+        <minecraft.version>1.19.3</minecraft.version>
+        <spigot.version>1.19.3-R0.1-SNAPSHOT</spigot.version>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <build>
+        <resources>
+		<resource>
+			<directory>${basedir}\src\main\resources</directory>
+			<filtering>true</filtering>
+			<includes>
+				<include>plugin.yml</include>
+			</includes>
+		</resource>
+	</resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+        <!-- This adds the Spigot Maven repository to the build -->
+        <repository>
+            <id>spigot-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+        </repository>
+        <!-- Got this from https://github.com/zizmax/AcuteLoot/blob/master/api_example/pom.xml -->
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>${spigot.version}</version>
+        </dependency>
+        <!-- Got this from https://github.com/zizmax/AcuteLoot/blob/master/api_example/pom.xml -->
+        <!-- Changed according to these tags: https://github.com/zizmax/AcuteLoot/tags" -->
+        <dependency>
+            <groupId>com.github.zizmax</groupId>
+            <artifactId>AcuteLoot</artifactId>
+            <version>api-1.0.0-beta</version>
+        </dependency>
+    </dependencies>
+
+</project>

@@ -1,0 +1,5 @@
+{
+    "yaml.schemas": {
+        "https://json.schemastore.org/bukkit-plugin.json": "plugins/SimpleFarmerPlugin/src/main/resources/plugin.yml"
+    }
+}

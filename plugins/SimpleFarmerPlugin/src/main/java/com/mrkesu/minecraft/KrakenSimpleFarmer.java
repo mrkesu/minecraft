@@ -1,0 +1,32 @@
+package com.mrkesu.minecraft;
+
+import org.bukkit.Bukkit;
+import org.bukkit.plugin.java.JavaPlugin;
+
+public class KrakenSimpleFarmer extends JavaPlugin {
+
+    private static KrakenSimpleFarmer instance;
+
+    @Override
+    public void onEnable() {
+
+        instance = this;
+
+        // Register custom hopper recipe
+        ModRecipes.registerRecipes();
+
+        // Register RemoveALHopperRecipe listener
+        Bukkit.getPluginManager().registerEvents(new RemoveALHopperRecipe(), this);
+
+        Bukkit.getLogger().info("Krakens Simple Farmer Plugin enabled.");
+    }
+
+    @Override
+    public void onDisable() {
+        Bukkit.getLogger().info("Krakens Simple Farmer Plugin disabled.");
+    }
+
+    public static KrakenSimpleFarmer getInstance() {
+        return instance;
+    }
+}

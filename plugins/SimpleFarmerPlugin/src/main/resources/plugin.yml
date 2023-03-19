@@ -1,0 +1,6 @@
+name: KrakenSimpleFarmer
+main: com.mrkesu.minecraft.KrakenSimpleFarmer
+version: 1.0.0
+description: Adds a custom hopper that runs the command '/acuteloot remove' on all items that pass through it.
+api-version: 1.19
+softdepend: [AcuteLoot]
