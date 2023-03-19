@@ -46,7 +46,12 @@ public class RemoveALHopperRecipe implements Listener {
                 ItemStack item = event.getItem();
                 // Run command for each item passing through hopper
                 // Doesn't work. Maybe I can use their API?
+
+                Bukkit.getLogger().info("Trying to get AL info...");
+                //Bukkit.getLogger().info(ALIntegration.API.getLootItem(item));
+
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "/acuteloot remove " + item.getType().getKey().getKey());
+                
             }
         }
     }

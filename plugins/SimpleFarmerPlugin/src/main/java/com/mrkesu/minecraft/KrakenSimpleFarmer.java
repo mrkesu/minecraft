@@ -7,10 +7,14 @@ public class KrakenSimpleFarmer extends JavaPlugin {
 
     private static KrakenSimpleFarmer instance;
 
+    //private ALIntegration alIntegration;
+
     @Override
     public void onEnable() {
 
         instance = this;
+
+        // alIntegration = new ALIntegration(this);
 
         // Register custom hopper recipe
         ModRecipes.registerRecipes();
@@ -23,6 +27,7 @@ public class KrakenSimpleFarmer extends JavaPlugin {
 
     @Override
     public void onDisable() {
+        // alIntegration = null;
         Bukkit.getLogger().info("Krakens Simple Farmer Plugin disabled.");
     }
 
