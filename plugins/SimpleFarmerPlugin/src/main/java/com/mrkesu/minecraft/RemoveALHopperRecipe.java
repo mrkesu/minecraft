@@ -15,6 +15,9 @@ import org.bukkit.block.Hopper;
 import org.bukkit.event.inventory.InventoryMoveItemEvent;
 
 public class RemoveALHopperRecipe implements Listener {
+    
+    // AcuteLoot API testing
+    private ALIntegration alIntegration;
 
     public static void registerRecipe() {
         // Create custom hopper
@@ -49,8 +52,32 @@ public class RemoveALHopperRecipe implements Listener {
 
                 Bukkit.getLogger().info("Trying to get AL info...");
                 //Bukkit.getLogger().info(ALIntegration.API.getLootItem(item));
+                Bukkit.getLogger().info("Trying on: " + item);
 
-                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "/acuteloot remove " + item.getType().getKey().getKey());
+                Bukkit.getLogger().info("Debug: " + KrakenSimpleFarmer.alIntegration.checkVersion());
+                
+
+                //KrakenSimpleFarmer.alIntegration.removeStuff(item)
+
+                //KrakenSimpleFarmer.alIntegration.getALInfo();
+
+                // I just re-implemented the RemoveCommand ¯\_(ツ)_/¯
+                // https://github.com/zizmax/AcuteLoot/blob/master/src/main/java/acute/loot/commands/RemoveCommand.java
+
+                // if (plugin().getLootCode(item) != null) {
+                //     ItemMeta meta = item.getItemMeta();
+                //     meta.setLore(new ArrayList<>());
+                //     meta.setDisplayName(null);
+                //     NamespacedKey key = new NamespacedKey(plugin(), "lootCodeKey");
+                //     meta.getPersistentDataContainer().remove(key);
+                //     item.setItemMeta(meta);
+                //     Bukkit.getLogger().info("AcuteLoot removed");
+                // } else {
+                //     Bukkit.getLogger().info("Item is not AcuteLoot");
+                // }
+
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "acuteloot remove " + item);
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "acuteloot remove " + item.getType().getKey().getKey());
                 
             }
         }
