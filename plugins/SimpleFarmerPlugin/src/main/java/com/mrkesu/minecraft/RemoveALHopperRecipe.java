@@ -19,10 +19,9 @@ public class RemoveALHopperRecipe implements Listener {
     public static void registerRecipe() {
         // Create custom hopper
         ItemStack removeALHopper = new ItemStack(Material.HOPPER);
-
-        // Add command to item meta
         ItemMeta meta = removeALHopper.getItemMeta();
         meta.setDisplayName("Remove Acute Loot Hopper");
+        // Wasn't sure if I needed this, but it was nice to have some visual effect.
         meta.addEnchant(Enchantment.ARROW_DAMAGE, 1, true);
         meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         removeALHopper.setItemMeta(meta);
@@ -46,6 +45,7 @@ public class RemoveALHopperRecipe implements Listener {
             if (hopper.getCustomName() != null && hopper.getCustomName().equals("Remove Acute Loot Hopper")) {
                 ItemStack item = event.getItem();
                 // Run command for each item passing through hopper
+                // Doesn't work. Maybe I can use their API?
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "/acuteloot remove " + item.getType().getKey().getKey());
             }
         }
