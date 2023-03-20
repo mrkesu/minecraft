@@ -4,7 +4,7 @@ I have no idea what I'm doing.
 This has been made to work with Bukkit (papermc \ spigot \ ?)
 
 ## Installation
-Newest release will be compiled to the target folder.
+Newest release will be compiled to the `plugins\SimpleFarmerPlugin\target` folder.
 
 Copy the jar file to your plugin folder.
 
