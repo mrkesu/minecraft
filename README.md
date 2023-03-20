@@ -1,6 +1,16 @@
 # I'm just a simple farmer
 I have no idea what I'm doing.
 
+Acute Loot is cool and adds some fun flavor to Minecraft, making it seem more like an RPG.
+
+It does mess up big atuomation-farms though, so I wanted to make a special hopper that simply strips the added flavor so that the items can be sortable and stacked like normal.
+
+Works like a normal hopper, but strips Acute Loot (like runnning /acuteloot remove)
+
+![Recipe for Remove Acute Loot Hopper](recipe.png "Recipe for Remove Acute Loot Hopper").
+
+
+
 This has been made to work with Bukkit (papermc \ spigot \ ?)
 
 ## Installation
